@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>manager BOOKING view</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+#t01 th {
+  background-color: green;
+  color: white;
+        }
+h1{
+  display:block;
+  color:green;
+  }
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: green;
+}
+li {
+  float: left;
+}
+
+li a,h5{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+h1{
+  display:block;
+  color:green;
+  }
+  li a:hover:not(.active) {
+  background-color: black;
+}
+.active {
+  background-color: green;
+
+  </style>
+
+</head>
+<body>
+
+<ul>
+    <br>
+    <li><a class="active" href="managerhome"><i class="fa fa-home fa-1.8x"></i></a> </li>
+<br>
+</ul>
+
+<table border="1px" >
+    <tr>
+       <th>RESORT NAME</th>
+
+        <th>TYPE</th>
+        <th>AC/NON AC</th>
+        <th>ADULT</th>
+         <th>CHILD</th>
+        <th>CHECK IN DATE</th>
+        <th>CHECK OUT DATE</th>
+        <th>PAYMENT</th>
+    </tr>
+    {% for i in data2 %}
+    <tr>
+        <td>{{i.resortname.resortname}}</td>
+
+        <td>{{i.type}}</td>
+        <td>{{i.acnonac}}</td>
+        <td>{{i.adult}}</td>
+        <td>{{i.child}}</td>
+        <td>{{i.checkin}}</td>
+        <td>{{i.checkout}}</td>
+        <td><button >{{i.status}}</button></td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+
+
+</body>
+</html>

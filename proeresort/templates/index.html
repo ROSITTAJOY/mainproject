@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<head>
+    <style>
+        .center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<div class="center">
+
+    <form class="text-center border border-light p-5" action="success" method="POST">
+        {% csrf_token %}
+
+        <p class="h3 mb-3"><i class="fas fa-coffee"></i>CONFORM YOUR COMFORT BED !!</p>
+        <p class="mb-3">You need a luxury vacation and we are with you!!</p>
+
+        <input type="name" name="name" id="name" required class="form-control mb-4" placeholder="Conform your Name">
+
+        <!-- RAZORPAY INTEGRATION HERE -->
+        <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="rzp_test_zQ1f5famQ1qxhU"
+            data-amount="50000" data-currency="INR" data-order_id="{{payment.id}}" data-buttontext="Pay with Razorpay"
+            data-name="Eresort Booking" data-description="The Heaven of western India"
+            data-image="horizontal_on_white_by_logaster.png" data-prefill.name="PC" data-prefill.email="eresortbooking.com"
+            data-theme.color="#4dff4d"></script>
+    </form>
+
+</div>
+
+
+</div>
+{% endblock %}

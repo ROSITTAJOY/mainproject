@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+            <figure class="view overlay rounded z-depth-1 main-img">
+              <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg"
+                data-size="710x823">
+                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg"
+                  class="img-fluid z-depth-1">
+              </a>
+            </figure>
+
+     <div class="row">
+  {% for i in data %}
+        <div>
+       <form action="readmore" method="post">
+    {% csrf_token %}
+
+      <div class="column" style="background-color:#ccc;">
+          <img src="{{i.photo.url}}" width="300" height="200"></h1>
+      <h2>{{i.resortname}} <button type="button" style="background-color:blue;color:white;">{{i.cost}}</button></h2>
+      <h4>{{i.availability}}</h4>
+      <input type="hidden" value="{{i.id}}" name="id">
+     <a href="readmore"><input type="submit" name="submit" value="READ MORE" style="background-color:red;color:white;"></a>
+      </div>
+
+    </div>
+
+       </form>
+
+{% endfor %}
+        </div>
+</center>
+
+</body>
+</html>

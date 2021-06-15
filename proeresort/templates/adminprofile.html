@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: green;
+}
+li {
+  float: left;
+}
+
+li a,h5{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+h1{
+  display:block;
+  color:green;
+  }
+ p{
+ color:red;
+  }
+li a:hover:not(.active) {
+  background-color: black;
+}
+.active {
+  background-color: green;
+}
+</style>
+</head>
+<body>
+
+<ul>
+    <li><a class="active" href="adminhome"><i class="fa fa-home fa-1.8x"></i></a></li>
+
+  <!--{% for i in data %}
+    {{i.username}}
+        <input type="hidden" name="id" value="{{i.id}}">
+    {% endfor %}-->
+</ul>
+<br>
+<!--
+<table border="1px" id="t01">
+    <tr>
+        <th>USERNAME</th>
+        <th>PASSWORD</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{i.username}}</td>
+        <td>{{i.password}}</td>
+        <input type="hidden" name="id" value="{{i.id}}">
+
+    </tr>
+    {% endfor %}
+</table>
+-->
+{% for i in data %}
+
+
+<div class="card">
+  <h1>{{i.username}}</h1>
+  <p class="title">CEO & Founder of eRESORT BOOKING.com</p>
+  <p>Munnar Tourism</p>
+  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+  </div>
+    {% endfor %}
+  <p><button>Contact</button></p>
+<button type="submit" style="background-color:white;color:black;">Change password/username</button>
+</div>
+
+
+</body>
+</html>

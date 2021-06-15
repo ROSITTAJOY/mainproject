@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>userprofile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+body{
+font-family:Times New Roman", Times, serif;
+}
+</style>
+    <style>
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: green;
+}
+li {
+  float: left;
+}
+
+li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 12px;
+  text-decoration: none;
+}
+h1{
+  display:block;
+  color:green;
+  }
+li a:hover:not(.active) {
+  background-color: black;
+}
+.active {
+  background-color: green;
+}
+ h3{
+       display:block;
+       color:green;
+      }
+        #customers {
+  font-family:font-family:Times New Roman", Times, serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: green;
+  color: white;
+}
+    </style>
+</head>
+<body>
+
+<ul>
+    <h10><li><a class="active" href="userhome"><i class="fa fa-home fa-1.8x"></i></a> </li></h10>
+
+</ul>
+<br>
+<!--
+<center>
+<table id="customers" border="1px" id="t01">
+    <tr>
+        <th>NAME</th>
+        <th>ADDRESS</th>
+        <th>STATE</th>
+        <th>DISTRICT</th>
+        <th>CITY</th>
+        <th>PINCODE</th>
+        <th>EMAIL</th>
+
+
+    </tr>
+    {% for i in data %}
+    <form action="edit" method="post">
+        {% csrf_token %}
+    <tr>
+    <td>{{i.name}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.state}}</td>
+        <td>{{i.district}}</td>
+        <td>{{i.city}}</td>
+        <td>{{i.pincode}}</td>
+        <td>{{i.email}}</td>
+        <input type="hidden" name="id" value="{{i.id}}">
+
+    </tr>
+    </form>
+    {% endfor %}
+</table>
+</center>
+-->
+<br><br>
+{% for i in data %}
+<div class="card">
+    <img src="{{i.photo.url}}" alt="progile pic" style="width:30%" class="img-circle">
+  <h1>{{i.name}}</h1>
+    <h3>{{i.designation}}</h3>
+  <p>Munnar Tourism</p>
+    <h4>{{i.address}}
+    {{i.district}}</h4>
+    <h4>{{i.email}}</h4>
+  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+  </div>
+    {% endfor %}
+  <p><button>Contact</button></p>
+<button type="submit" style="background-color:white;color:black;">Change password/username</button>
+</div>
+
+</body>
+</html>

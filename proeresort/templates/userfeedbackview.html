@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+#t01 th {
+  background-color: green;
+  color: white;
+        }
+h1{
+  display:block;
+  color:green;
+  }
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: green;
+}
+li {
+  float: left;
+}
+
+li a,h5{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+h1{
+  display:block;
+  color:green;
+  }
+  li a:hover:not(.active) {
+  background-color: black;
+}
+.active {
+  background-color: green;
+
+  </style>
+</head>
+<body>
+<ul>
+    <li><a class="active" href="userhome"><i class="fa fa-home fa-1.8x"></i></a> </li>
+
+</ul>
+<table border="1px" id="myTable">
+    <tr>
+
+        <th>RESORT NAME</th>
+        <th>RESORT DETAILS</th>
+        <th>COMMENT</th>
+         <th>RATING</th>
+        <th>DELETE</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+
+       <td>{{i.resortname.resortname}}</td>
+        <td>{{i.resortdetails}}</td>
+        <td>{{i.comment}}</td>
+        <td>{{i.rating}}</td>
+         <td><input type="button" value="Delete" onclick="deleteRow(this)" style="border-radius: 40px;background-color:red;color:white;"></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<script>
+function deleteRow(r) {
+  var i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("myTable").deleteRow(i);
+}
+</script>
+
+
+</body>
+</html>

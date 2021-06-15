@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>booknow</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+ <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: green;
+}
+li {
+  float: left;
+}
+
+li a,h5{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+h1{
+  display:block;
+  color:#00a3cc;
+  }
+li a:hover:not(.active) {
+  background-color: green;
+}
+.active {
+  background-color: green;
+}
+ h1{
+       display:block;
+       color:green;
+      }
+
+      li a:hover, .dropdown:hover .dropbtn {
+  background-color:#009900;
+  }
+  h8{
+  color:white;
+  }
+</style>
+    <!--<style>
+     div {
+  width: 300px;
+  border: 5px solid green;
+  padding: 50px;
+  margin: 20px;
+      }
+
+      </style>-->
+    <style>
+body, html {
+  height: 90%;
+  font-family:Times New Roman", Times, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+background-image: url('l15.jpg');
+
+  min-height: 600px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  opacity: 0.9;
+}
+
+/* Add styles to the form container */
+.container {
+  position: left;
+  right: 0;
+  margin: 20px;
+  max-width: 400px;
+  padding: 20px;
+  background-color: white;
+  opacity: 0.8;
+}
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: green;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.footer {
+   position: static;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:#ccf5ff;
+   color: green;
+   height:45px;
+   text-align: center;
+}
+</style>
+<script>
+       function daysDifference() {
+         //define two variables and fetch the input from HTML form
+         var dateI1 = document.getElementById("checkindate").value;
+         var dateI2 = document.getElementById("checkoutdate").value;
+
+        //define two date object variables to store the date values
+         var date1 = new Date(dateI1);
+         var date2 = new Date(dateI2);
+
+        //calculate time difference
+         var time_difference = date2.getTime() - date1.getTime();
+
+         //calculate days difference by dividing total milliseconds in a day
+         var result = time_difference / (1000 * 60 * 60 * 24);
+
+         alert("Your "+ result + " days booking Registered Succesfuly!!!!");
+
+
+                    }
+
+      </script>
+</head>
+<body>
+<ul>
+    <br>
+    <li><a class="active" href="userhome"><i class="fa fa-home fa-1.8x"></i></a> </li>
+<br>
+</ul>
+<div class="bg-img"><br><br><br>
+   <center>
+    <div style="width: 500px;padding: 1px;margin: 20px">
+<form action="book" method="post" id="f" class="container">
+
+    {% csrf_token %}
+
+<select name="Resort" id="s" >
+    {% for i in data %}
+  <option value="{{i.id}}" >{{i.resortname}}</option>
+      {% endfor %}
+</select><br><br>
+
+    <input type="radio" name="type" value="Single"  >    SINGLE
+    <input type="radio" name="type" value="Dulex" >DULEX <br><br>
+
+    <input type="radio" name="acnonac" value="AC" >AC
+    <input type="radio" name="acnonac" value="Non AC" >NON AC<br><br>
+    <input type="number" name="adult" placeholder="Enter adult"required><br><br><br>
+    <input type="number" name="child" placeholder="Enter child" required><br><br><br>
+
+    <input type="date" name="checkin"  required> <br><br><br>
+    <input type="date" name="checkout" required>  <br><br><br>
+    <!--<button onclick="daysDifference()">
+          Calculate number of days
+        </button>
+      <h3 style="color:32A80F" id="result" align="center"></h3>-->
+<input type="hidden" name="id" value="{{i.id}}">
+ <input type="submit" value="booknow" class="btn" onclick="daysDifference()">
+
+
+</form>
+   </center>
+   </div>
+</div>
+
+</body>
+</html>

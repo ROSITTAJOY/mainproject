@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+font-family:Times New Roman", Times, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+background-image: url('l22.jpg');
+
+  min-height: 650px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  opacity: 0.9;
+}
+    </style>
+    <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+   background-color: transparent;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #009900;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+<div class="bg-img">
+<br>
+    <div class="navbar">
+        <a class="active" href="adminprofile">PROFILE</a>
+          <div class="dropdown">
+              <button class="dropbtn">USERS
+              <i class="fa fa-caret-down"></i>
+              </button>
+                      <div class="dropdown-content">
+                          <a class="active" href="userview">User view</a>
+                          <a class="active" href="viewmanager">Manager view</a>
+                      </div>
+          </div>
+
+          <div class="dropdown">
+              <button class="dropbtn">RESORTS
+              <i class="fa fa-caret-down"></i>
+              </button>
+                      <div class="dropdown-content">
+                          <a href="adminaddresort">Resorts add</a>
+                          <a class="active" href="viewresort">Resorts view</a>
+                          <a class="active" href="editresort">Resorts edit</a>
+                      </div>
+          </div>
+        <div class="dropdown">
+              <button class="dropbtn">FEEDBACKS
+              <i class="fa fa-caret-down"></i>
+              </button>
+                      <div class="dropdown-content">
+                         <a class="active" href="feedbackview">Feedback view</a>
+                          <a class="active" href="adminfeedback">Feedbacks</a>
+                      </div>
+          </div>
+        <div class="dropdown">
+              <button class="dropbtn">STATE
+              <i class="fa fa-caret-down"></i>
+              </button>
+                      <div class="dropdown-content">
+                          <a class="active" href="state">State add</a>
+                         <a class="active" href="stateview">State view</a>
+
+                      </div>
+          </div>
+<a class="active" href="adminbookview">BOOKING</a>
+        <a class="active" href="out">SIGN OUT</a>
+    </div>
+</div>
+</body>
+</html>

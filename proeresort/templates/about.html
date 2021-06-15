@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>about</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: green;
+  font-family: Times New Roman", Times, serif;
+}
+li {
+  float: left;
+}
+
+li a,h5{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 9px 10px;
+  text-decoration: none;
+}
+h1{
+  display:block;
+  color:green;
+  }
+li a:hover:not(.active) {
+  background-color: black;
+}
+.active {
+  background-color: green;
+}
+ h1{
+       display:block;
+       color:green;
+      }
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: black;
+  }
+
+</style>
+    <style>
+.card {
+  box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2);
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+  font-family: Times New Roman", Times, serif;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 30%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+
+<ul>
+    <br><li><a class="active" href="homee"><i class="fa fa-home fa-1.8x"></i></a> </li>
+    <li><a class="active" href="imagegallery">Image gallery</a> </li>
+    <li><a class="active" href="resortabout">About</a> </li>
+    <li><a class="active" href="contact">Contact</a> </li>
+</ul>
+<!--
+{% for i in data %}
+<center>
+<form action="det" method="post">
+    {% csrf_token %}
+<h4>{{i.resortname}}</h4>
+<img src="{{i.photo.url}}"><br>
+    <input type="hidden" value="{{i.id}}" name="id"><br>
+    <input type="submit" value="more details" style="background-color:red;color:white;">
+    </form>
+{% endfor %}
+    </center>
+-->
+<!--
+   <table style="width:100%">
+      <tr>
+      </tr>
+      {% for t in data %}
+         <tr>
+            <td>{{ t.resorname }}</td>
+            <td>{{ t.resortname }}</p>
+         </tr>
+      {% endfor %}
+   </table>
+   <hr><p> --><br><br><br><br><br><br><br><br><br>
+<div class="card">
+		<div class="col-xs-12 col-sm-9 col-md-9">
+
+			<div class="item-page">
+   {% if data %}
+{% for i in data %}
+
+<center>
+<form action="login" method="post">
+    {% csrf_token %}
+<h4>{{i.resortname}}</h4>
+<img src="{{i.photo.url}}" style="width=100px"><br>
+    {{i.place}}
+    <input type="hidden" value="{{i.id}}" name="id"><br>
+    <input type="submit" value="more details" style="background-color:red;color:white;">
+    </form>
+{% endfor %}
+    </center>
+   {% else %}
+
+<center>
+
+      <h2 class='error'>Your search term returned no items.Please wist eresort booking.com home to more details!!!</h2>
+</center>
+   {% endif %}
+            </div>
+        </div>
+</div>
+</body>
+</html>

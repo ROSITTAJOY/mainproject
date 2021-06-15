@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="home" >Home</a>
+<form action="save" method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+  First Name:  <input type="text" name="fname">
+   LastName: <input type="text" name="lname">
+    <label for="s">Choose State:</label>
+
+<select name="State" id="s">
+    {% for i in data %}
+  <option value="{{i.id}}">{{i.state}}</option>
+      {% endfor %}
+
+</select>
+    Age:<input type="number" name="age">
+    photo:<input type="file" name="img">
+    <input type="submit" value="Save">
+</form>
+</body>
+</html>

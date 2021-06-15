@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>paymentss</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+
+
+h1{
+  display:block;
+  color:green;
+  }
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: green;
+}
+li {
+  float: left;
+}
+
+li a,h5{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+h1{
+  display:block;
+  color:green;
+  }
+  li a:hover:not(.active) {
+  background-color: black;
+}
+.active {
+  background-color: green;
+  }
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+  </style>
+
+    <script type="text/javascript">
+                               function myalert() {
+                                      alert("Your booking is only conformed after payment!!!!");
+                                       }
+</script>
+</head>
+<body>
+
+<ul>
+    <br>
+    <li><a class="active" href="userhome"><i class="fa fa-home fa-1.8x"></i></a> </li>
+<br>
+</ul>
+
+<br> <br> <br><br> <br> <br><br> <br> <br>
+    <div class="card">
+        <center>
+    <br> <br>
+    <b><h3>YOUR BOOKING IS SUCCUSFULY REGISTERD....</h3></b>
+    <br>
+<table>
+    <tr>
+<th><form action="payment" method="post" >
+    {% csrf_token %}
+    <input type="hidden" name="id" value="{{i.id}}">
+    <button value="paid" name="status" style="background-color:green;color:white;text-align:right;">PAY Now</button>
+
+
+</form></th>
+<th>
+<form action="pay" method="post" >
+    {% csrf_token %}
+    <input type="hidden" name="id" value="{{i.id}}">
+<button value="Later" name="status" onclick="myalert()" style="background-color:red;color:white;text-align:right;">PAY Later</button>
+
+</form></th>
+    </tr>
+</table><br> <br> <br>
+             </center>
+    </div>
+
+</body>
+
+</html>

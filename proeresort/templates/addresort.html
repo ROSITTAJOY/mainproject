@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addresort</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+     <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: green;
+}
+li {
+  float: left;
+}
+
+li a,h5{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+h1{
+  display:block;
+  color:green;
+  }
+li a:hover:not(.active) {
+  background-color: green;
+}
+.active {
+  background-color: green ;
+}
+ h1{
+       display:block;
+       color:green;
+      }
+
+      li a:hover, .dropdown:hover .dropbtn {
+  background-color: #009900;
+  }
+  h8{
+  color:white;
+  }
+</style>
+     <style>
+
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  center: 0;
+  margin: 20px;
+  max-width: 500px;
+
+  padding: 20px;
+  background-color: white;
+  opacity: 0.8;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #00a3cc;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.footer {
+   position: static;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:#ccf5ff;
+   color: green;
+   height:45px;
+   text-align: center;
+}
+    <!--<style>
+input[type=text], select {
+  width: 100%;
+  padding: 8px 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=number], select {
+   width: 100%;
+  padding: 8px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=password], select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=submit] {
+  width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 8px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+</style>
+        <style>
+        body{
+font-family:Times New Roman", Times, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+background-image: url('the-leaf-munnar (6).jpg');
+
+  min-height: 850px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  opacity: 0.9;
+}
+    </style>
+
+     <script>
+        function myFunction() {
+             alert("Registered Succesfuly!!!!");
+              }
+    </script>
+</head>
+<body>
+<div class="bg-img">
+<ul>
+    <li><a class="active" href="managerhome"><i class="fa fa-home fa-1.8x"></i></a> </li>
+
+</ul>
+<center>
+    <div style="width: 500px;padding: 1px;margin: 20px">
+<form action="addre" id="f" method="post" enctype="multipart/form-data" class="container" >
+    {% csrf_token %}
+
+       <input type="text" name="resortname" placeholder="Enter the resort name" required>
+        <input type="text" name="place" placeholder="Enter the resort place" required>
+        <select name="State" id="s">
+    {% for i in data %}
+  <option value="{{i.id}}">{{i.state}}</option>
+      {% endfor %}
+        </select>
+        <input type="number" name="noofrooms" placeholder="Number of rooms in resort" required>
+        <input type="number" name="cost" placeholder="Basic cost of resort" required>
+        <input type="text" name="availability" placeholder="Resort availability" required>
+        <input type="text" name="safty" placeholder="Resort Health and safty" required>
+        <input type="text" name="activities" placeholder="Resortmentertainment and activities" required >
+        <input type="text" name="des" placeholder="Propertydiscription" required>
+        <input type="text" name="facilities" placeholder="Resort facilities" required>
+        <input type="text" name="map" placeholder="Resort Google map link" required>
+        <input type="file" name="file" width="50" height="50" accept="image/*">
+        <input type="submit"value="submit" name="submit" onclick="myFunction()">
+
+</form>
+        </div>
+</center>
+</div>
+</body>
+</html>

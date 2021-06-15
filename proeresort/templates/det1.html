@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show</title>
+</head>
+<body>
+{% for i in data %}
+{% csrf_token %}
+<h1>{{i.fname}}</h1>
+<h1>{{i.lname}}</h1>
+<h1>{{i.age}}</h1>
+<h1>{{i.state.sname}}</h1>
+<img src="{{i.data.url}}" height="30%">
+
+
+
+{% endfor %}
+</body>
+</html>

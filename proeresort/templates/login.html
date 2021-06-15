@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+ <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+li {
+  float: left;
+}
+
+li a,h5{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+h1{
+  display:block;
+  color:#00a3cc;
+  }
+li a:hover:not(.active) {
+ background-color: transparent;
+}
+.active {
+  background-color: transparent;
+}
+ h1{
+       display:block;
+       color:green;
+      }
+
+      li a:hover, .dropdown:hover .dropbtn {
+  background-color:#009900;
+  }
+  h8{
+  color:white;
+  }
+</style>
+
+    <style>
+body, html {
+  height: 90%;
+  font-family:Times New Roman", Times, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+background-image: url('l11.jpg');
+
+  min-height: 600px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  opacity: 0.9;
+}
+
+/* Add styles to the form container */
+.container {
+  position: center;
+  right: 0;
+  margin: 20px;
+  max-width: 50%;
+  padding: 20px;
+
+  opacity: 0.8;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+   border-radius: 50px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: green;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 70%;
+  opacity: 0.9;
+   border-radius: 50px;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.footer {
+   position: static;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:#ccf5ff;
+   color: green;
+   height:45px;
+   text-align: center;
+}
+</style>
+
+</head>
+<body>
+
+<div class="bg-img">
+
+<ul><br>
+    <li><a class="active" href="homee"><i class="fa fa-home fa-1.8x"></i></a> </li>
+    <li><a class="active" href="register">USER REGISTER</a></li>
+    <li><a class="active" href="managerregister">MANAGER REGISTER</a></li>
+    <li><a class="active" href="imagegallery">IMAGE GALLERY</a> </li>
+    <li><a class="active" href="resortabout">ABOUT</a> </li>
+    <li><a class="active" href="contact">CONTACT</a> </li>
+</ul>
+<br><br><br><br><br><br>
+	<center>
+  <form action="logins" method="post" class="container">
+      {% csrf_token %}
+
+
+
+    <input type="text" placeholder="Enter username" name="username" required>
+
+
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <input type="submit" name="login" value="SIGN IN" class="btn"><br><br>
+    <a href="register" style="color:green">New user</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="forgot" style="color:red">Forgot password</a>
+      <p class="text-danger">{{error}}</p>
+        <p class="text-danger">{{na}}</p><br>
+
+  </form>
+</center>
+</div>
+
+</body>
+
+</html>
+
+<!--
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<title>eresort</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Travello template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+
+
+</head>
+
+<body>
+
+<dody class="super_container">
+
+
+
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_content d-flex flex-row align-items-center justify-content-start">
+						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+							<div class="logo"><a href="homee">eRESORT</a></div>
+							<nav class="main_nav">
+								<ul class="d-flex flex-row align-items-start justify-content-start">
+									<li><a href="homee">HOME</a></li>
+									<li><a href="imagegallery">IMAGE GALLERY</a></li>
+                                    <li><a href="resortabout">ABOUT US</a></li>
+									<li><a href="contact">CONTACT</a></li>
+								</ul>
+							</nav>
+
+
+
+	</header>
+
+	<div class="home">
+
+
+		<div class="home_slider_container">
+			<div class="owl-carousel owl-theme home_slider">
+
+
+				<div class="owl-item">
+					<div class="background_image" style="background-image:url(l11.jpg)"></div>
+					<div class="home_slider_content_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+                                    <style>
+body, html {
+  height: 90%;
+  font-family:Times New Roman", Times, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+background-image: url('fog-resort-spa.jpg');
+
+  min-height: 600px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  opacity: 0.9;
+}
+
+/* Add styles to the form container */
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 75%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: green;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.footer {
+   position: static;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:#ccf5ff;
+   color: green;
+   height:45px;
+   text-align: center;
+}
+</style>
+									<form action="logins" method="post" >
+      {% csrf_token %}
+
+
+
+    <input type="text" placeholder="Enter username" name="username" required>
+
+
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <input type="submit" name="login" value="SIGN IN" class="btn"><br><br>
+      <a href="register" style="color:green">New user</a>
+      <a href="forgot" style="color:red">Forgot password</a>
+      <p class="text-danger">{{error}}</p>
+        <p class="text-danger">{{na}}</p><br>
+
+  </form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="owl-item">
+					<div class="background_image" style="background-image:url(l10.jpg)"></div>
+					<div class="home_slider_content_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="home_slider_content">
+										<div class="home_title"><h2>Book your comfort resort</h2></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="owl-item">
+					<div class="background_image" style="background-image:url(l10.jpg)"></div>
+					<div class="home_slider_content_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="home_slider_content">
+										<div class="home_title"><h2>Book your comfort resort</h2></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>-->

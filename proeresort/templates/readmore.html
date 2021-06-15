@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>readmore</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color:white;
+  padding: 2px 18px;
+
+  color: black;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+
+.fa {
+  font-size: 25px;
+}
+
+/* Three column layout */
+.side {
+  float: left;
+  width: 15%;
+  margin-top:10px;
+}
+
+.middle {
+  margin-top:10px;
+  float: left;
+  width: 70%;
+}
+
+/* Place text to the right */
+.right {
+  text-align: right;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+
+}
+
+/* The bar container */
+.bar-container {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+}
+
+/* Individual bars */
+.bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
+.bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
+.bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
+.bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+.bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 400px) {
+  .side, .middle {
+    width: 50%;
+  }
+  .right {
+    display: none;
+  }
+}
+
+
+</style>
+<style>
+.card {
+  box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2);
+  max-width: 85%;
+  margin: auto;
+  text-align: left;
+  font-family: Times New Roman", Times, serif;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 60%;
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+
+
+</head>
+<body>
+<br><br>
+<ul>
+    <li><a class="active" href="userhome"><i class="fa fa-home fa-1.8x"></i></a> </li>
+
+</ul>
+<br>
+<div class="card">
+<marquee>
+<b><h2>{{data.resortname}}</h2></marquee></b>
+</div>
+<div class="card" >
+
+{% for i in data2 %}
+
+    <div class="mySlides">
+
+        <div class="numbertext"></div>
+
+        <img src="{{i.photo.url}}" style="width:100%;height:450px">
+
+    </div>
+
+{% endfor %}
+
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+    <div class="container">
+           <div class="caption-container">
+              <p id="caption"></p>
+           </div>
+
+             <div class="row">
+    {% for i in data2 %}
+                <div class="column">
+                   <img class="demo cursor" src="{{i.photo.url}}" style="width:100%;height:100px" onclick="currentSlide(1)" alt="The resort images">
+                </div>
+    {% endfor %}
+             </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+<br>
+<div class="card">
+    <div class="col-xs-12 col-sm-9 col-md-9">
+
+			<div class="item-page"><br>
+<h2><img src="{{'safty.png'}}" style="width:10%;height:80px">&nbsp;&nbsp;&nbsp;&nbsp; Travel safe during COVID-19</h2>
+                <h4>What you can expect during your stay &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Community</h4>
+                <h6>*&nbsp;&nbsp;Face masks required for staff in public areas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp; Write a review in feedback form</h6>
+<h6>*&nbsp;&nbsp;24-hour minimum vacancy between guests &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ask a question?</h6>
+                <h15>Safety precautions are provided by the property and are not checked by Tripadvisor for accuracy.</h15>
+<br><br><br>
+
+            </div>
+    </div>
+</div>
+
+
+<br>
+<div class="card">
+    <div class="col-xs-12 col-sm-9 col-md-9">
+
+			<div class="item-page">
+
+
+
+<!-- <div class="container mt-3">-->
+<form action="booknow" method="post">
+    {% csrf_token %}
+                         <div class="media mt-3">
+    <img src="{{data.photo.url}}" class="align-self-center mr-3" style="width:500px">
+                         <div class="media-body">
+
+        <b><h8>CONTACT:</h8><br></b>
+        <h9>{{data.place}}</h9><br>
+        <h9>{{data.state.state}}</h9><br>
+        <b><h8>AVAILABILITY:</h8><br></b>
+        <h9>{{data.availability}}</h9><br>
+        <b><h8>HEALTH AND SAFTY:</h8><br></b>
+        <h9>{{data.safty}}</h9><br>
+        <b><h8>ENTERTAINMENT AND ACTIVITIES</h8><br></b>
+        <h9>{{data.activities}}</h9><br>
+        <b><h8>COMMON FACILITIES</h8><br></b>
+        <h9>{{data.facilities}}</h9><br>
+       <b><h8><br>
+          <button style="background-color:blue;color:white;margin:15px;width:60px"> {{data.cost}}</button>
+           <input type="hidden" value="{{data.id}}" name="id">
+        <button name="book" style="background-color:green;color:white;width:200px;height:50px;" >BOOK NOW</button></h8><br>
+
+                         </div>
+                         </div>
+
+</form>
+            </div>
+    </div>
+</div>
+
+<br><br>
+<div class="card">
+<table>
+<tr>
+    <td>
+<div class="row" style="max-width: 600px;padding:30px" >
+  <div class="side">
+    <div>5 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>150</div>
+  </div>
+  <div class="side">
+    <div>4 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>63</div>
+  </div>
+  <div class="side">
+    <div>3 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>15</div>
+  </div>
+  <div class="side">
+    <div>2 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>6</div>
+  </div>
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>20</div>
+  </div>
+
+</div>
+    </td>
+    <td>
+
+    </td><td>
+
+    </td><td>
+
+    </td><td>
+
+
+
+    </td>
+    <td>
+        {% for r in data1 %}
+        <h6 style="font-family: Lucida Console,Courier New, monospace;"><b>*</b>{{r.username}}
+
+      <b>*</b>{{r.resortname.resortname}}
+          <b>*</b>resort deatails: {{r.resortdetails}}
+     <b>*</b>{{r.comment}}
+      <b>*</b> ratting:{{r.rating}}</h6>
+{% endfor %}
+    </td>
+    </tr>
+    </table>
+</div>
+
+
+
+<br>
+<!--
+<div class="card">
+    {% for r in data1 %}
+<h4 style=" font-family: Arial">{{r.username}}
+
+      {{r.resortname.resortname}}
+           {{r.resortdetails}}
+     {{r.comment}}
+       {{r.rating}}</h4>
+{% endfor %}
+</div>-->
+
+   <!--
+<div>
+    {% for i in data2 %}
+  <img src="{{i.photo.url}}" class="align-self-center mr-3" style="width:500px">
+{% endfor %}
+</div>-->
+
+<div class="card">
+    <iframe src="{{data.map}}" width="100%" height="500px"></iframe>
+</div>
+</center>
+
+
+</body>
+</html>

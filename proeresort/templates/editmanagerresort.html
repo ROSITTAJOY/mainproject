@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>manager resort edit</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+.card {
+  box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2);
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+  font-family: Times New Roman", Times, serif;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 20%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: green;
+}
+li {
+  float: left;
+}
+
+li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+h1{
+  display:block;
+  color:green;
+  }
+li a:hover:not(.active) {
+  background-color: black;
+}
+.active {
+  background-color: green;
+}
+
+</style>
+</head>
+<body>
+<ul>
+    <li><a class="active" href="managerhome"><i class="fa fa-home fa-1.8x"></i></a> </li>
+
+</ul><!--
+<table border="1px">
+    <tr>
+        <th>RESORTNAME</th>
+        <th>PLACE</th>
+        <th>STATE</th>
+        <th>DISTRICT</th>
+        <th>NOOFROOMS</th>
+        <th>COST</th>
+        <th>AVAILABILITY</th>
+        <th>SAFTY</th>
+        <th>ACTIVITIES</th>
+        <th>DESCRIPTION</th>
+        <th>FACILITIES</th>
+        <th>PHOTO</th>
+        <th>Status</th>
+    </tr>
+
+        {% for i in data %}
+
+<form action="editmanagerfile" method="post">
+    {% csrf_token %}
+    <tr>
+        <td>{{i.resortname}}</td>
+        <td>{{i.place}}</td>
+        <td>{{i.state}}</td>
+        <td>{{i.district}}</td>
+        <td>{{i.noofrooms}}</td>
+        <td>{{i.cost}}</td>
+        <td>{{i.availability}}</td>
+        <td>{{i.safty}}</td>
+        <td>{{i.activities}}</td>
+        <td>{{i.des}}</td>
+        <td>{{i.facilities}}</td>
+        <td><img src="{{i.photo.url}}" width="100" height="100"></td>
+            <input type="hidden" name="id" value="{{i.id}}">
+        <td> <input type="submit"  value="edit" style="background-color:green;color:white;"></td>
+        </form>
+    </tr>
+        {% endfor %}
+
+
+</table>-->
+
+<div class="card">
+
+{% for i in data %}
+<form action="editmanagerfile" method="post">
+    {% csrf_token %}
+                         <div class="media mt-3">
+
+    <img src="{{i.photo.url}}" class="align-self-center mr-3" style="width:500px">
+                         <div class="media-body">
+
+        <b><h8>CONTACT:</h8><br></b>
+        <h9>{{i.place}}</h9><br>
+        <h9>{{i.state.state}}</h9><br>
+        <b><h8>AVAILABILITY:</h8><br></b>
+        <h9>{{i.availability}}</h9><br>
+        <b><h8>HEALTH AND SAFTY:</h8><br></b>
+        <h9>{{i.safty}}</h9><br>
+        <b><h8>ENTERTAINMENT AND ACTIVITIES</h8><br></b>
+        <h9>{{i.activities}}</h9><br>
+        <b><h8>COMMON FACILITIES</h8><br></b>
+        <h9>{{i.facilities}}</h9><br>
+       <b><h8>COST:</h8><br></b>
+        <h9> {{i.cost}}</h9><br>
+                              <input type="hidden" name="id" value="{{i.id}}">
+      <h5>{{i.resortname}}  <button name="edit" style="background-color:green;color:white;" >EDIT</button></h5>
+
+                         </div>
+                         </div>
+
+</form>
+{% endfor %}
+            </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

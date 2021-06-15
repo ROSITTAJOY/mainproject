@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>state view</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: green;
+}
+li {
+  float: left;
+}
+
+li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+h1{
+  display:block;
+  color:green;
+  }
+li a:hover:not(.active) {
+  background-color: black;
+}
+.active {
+  background-color: green;
+}
+
+</style>
+    <style>
+
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  center: 0;
+  margin: 20px;
+  max-width: 500px;
+
+  padding: 20px;
+  background-color: white;
+  opacity: 0.8;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #00a3cc;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.footer {
+   position: static;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:#ccf5ff;
+   color: green;
+   height:45px;
+   text-align: center;
+}
+    <!--<style>
+input[type=text], select {
+  width: 100%;
+  padding: 8px 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=number], select {
+   width: 100%;
+  padding: 8px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=password], select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=submit] {
+  width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 8px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+</style>
+</head>
+<body>
+<ul>
+    <li><a class="active" href="adminhome"><i class="fa fa-home fa-1.8x"></i></a> </li>
+
+</ul><br><br><center>
+
+     <div style="width: 500px;padding: 1px;margin: 20px">
+    {% for i in data %}
+    <input type="text"  value="{{i.state}}" ><br>
+
+    {% endfor %}
+    <a href="state"> <center> <input type="submit"value="ADD" name="submit" class="btn"></center></a>
+</center>
+
+     </div>
+</body>
+</html>

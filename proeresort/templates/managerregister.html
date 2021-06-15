@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>managerregister</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+li {
+  float: left;
+}
+
+li a,h5{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+h2{
+  display:block;
+  color:green;
+  }
+li a:hover:not(.active) {
+  background-color: black;
+}
+.active {
+  background-color: transparent;
+}
+ h1{
+       display:block;
+       color:green;
+      }
+
+      li a:hover, .dropdown:hover .dropbtn {
+  background-color:#009900;
+  }
+</style>
+
+    <style>
+
+
+/* Add styles to the form container */
+.container {
+  position: center;
+  center: 0;
+  margin: 20px;
+  max-width: 600px;
+  height:550px;
+  padding: 20px;
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 40px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #00a3cc;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.footer {
+   position: static;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:#ccf5ff;
+   color: green;
+   height:45px;
+   text-align: center;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=number], select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=password], select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=submit] {
+  width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 8px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+</style>
+          <style>
+        body{
+font-family:Times New Roman", Times, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+background-image: url('l18.jpg');
+
+  min-height: 700px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  opacity: 0.9;
+}
+    </style>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+    <script>
+        function myFunction() {
+             alert("Registered Succesfuly! Please login to register your resort");
+              }
+    </script>
+</head>
+<body>
+<div class="bg-img">
+<ul>
+    <br><br>
+    <li><a class="active" href="homee"><i class="fa fa-home fa-1.8x"></i></a> </li>
+
+    <li><a class="active" href="imagegallery">IMAGE GALLERY</a> </li>
+    <li><a class="active" href="resortabout">ABOUT</a> </li>
+    <li><a class="active" href="contact">CONTACT</a> </li>
+</ul>
+<center>
+     <div style="width: 500px;padding: 1px;margin: 20px" class="row">
+
+<form action="managerreg" name="myForm" method="post" enctype="multipart/form-data" class="container">
+    {% csrf_token %}
+    <div class="pull-right">
+<button type="reset" onkeypress="cancel()"name="Reset" value="Clear" class="btn btn-primary"
+            style="background-color:white;color:white;width:10px;height:10px;">
+                    <i class="livicon" data-n="trash" data-s="16" data-c="#fff" data-hc="0">
+
+                    </i>❌</button>
+    </div>
+        <div class="column">
+
+<script>
+function myFunction() {
+var x = document.forms["myForm"]["name"].value;
+  if (x == "" || x== !/^[a-zA-Z]*$/g.test(document.myForm.name.value)) {
+    alert("Enter only alphabetic characters as Name![a-zA-Z]");
+    return false;
+  }
+}
+function cancel() {
+    alert("Your data is not saved!!");
+
+  }
+function myFunction1() {
+var x = document.forms["myForm"]["dob"].value;
+  if (x == "") {
+    alert("Date of brith select from field side menu");
+    return false;
+  }
+}
+function myFunction2() {
+var x = document.forms["myForm"]["gender"].value;
+  if (x == "" || x== !/^[a-zA-Z]*$/g.test(document.myForm.gender.value)) {
+    alert("Enter only alphabetic characters as specify gender![a-zA-Z]");
+    return false;
+  }
+}
+function myFunction3() {
+var x = document.forms["myForm"]["phone"].value;
+  if (x == "" || x== !/^[0-9]*$/g.test(myForm.phone.value)) {
+    alert("Enter numeric values as Phone Number![0-9]");
+    return false;
+  }
+}
+function myFunction4() {
+var x = document.forms["myForm"]["address"].value;
+  if (x == "") {
+    alert("Enter your permanent address");
+    return false;
+  }
+}
+function myFunction5() {
+var x = document.forms["myForm"]["city"].value;
+  if (x == "") {
+    alert("Enter your living location ");
+    return false;
+  }
+}
+function myFunction6() {
+var x = document.forms["myForm"]["pincode"].value;
+  if (x == "") {
+    alert("Enter numeric values as pincode ![0-9]");
+    return false;
+  }
+}
+function myFunction7() {
+var x = document.forms["myForm"]["designation"].value;
+  if (x == "" || x== !/^[a-zA-Z]*$/g.test(document.myForm.designation.value)) {
+    alert("Enter only alphabetic characters as your designation![a-zA-Z]");
+    return false;
+  }
+}
+function myFunction8() {
+var x = document.forms["myForm"]["username"].value;
+  if (x == "" || x== !/^[a-zA-Z]*$/g.test(document.myForm.username.value)) {
+    alert("Enter only alphabetic characters as your username![a-zA-Z]");
+    return false;
+  }
+}
+function myFunction9() {
+var x = document.forms["myForm"]["password"].value;
+  if (x == "" || x== !/^[a-zA-Z0-9@*&]*$/g.test(document.myForm.password.value)) {
+    alert("using strong password.![a-zA-Z0-9@*&]");
+    return false;
+  }
+}
+</script>
+            <h3>PERSONAL INFORMATION</h3>
+
+        <input type="text" name="name" placeholder="Enter the name" onkeyup="myFunction()" required>
+      <input type="date" name="dob" placeholder="Enter the dob" onkeyup="myFunction1()" required>
+      <input type="text" name="gender" placeholder="Enter the gender" onkeyup="myFunction2()" required>
+        <input type="number" name="phone" placeholder="Enter phone number" onkeyup="myFunction3()" required>
+        <input type="text" name="address" placeholder="Enter permanent address" onkeyup="myFunction4()" required>
+    <select name="State" id="s">
+    {% for i in data %}
+  <option value="{{i.id}}">{{i.state}}</option>
+      {% endfor %}
+</select>
+       <input type="text" name="city" placeholder="Enter city" onkeyup="myFunction5()" required>
+    <input type="number" name="pincode" placeholder="Enter the post code" onkeyup="myFunction6()"  required>
+        </div>
+
+        <div class="column">
+           <h3>RESORT INFORMATION</h3>
+      <input type="text" name="resortname" placeholder="Enter the resort name"  required>
+     <input type="text" name="place" placeholder="Enter the resort place" required>
+       <input type="text" name="designation" placeholder="Enter your designation" onkeyup="myFunction7()" required>
+        <input type="file" name="file" accept="image/*">
+   <input type="text" name="username" placeholder="Enter username"  onkeyup="myFunction8()" required>
+        <input type="password" name="password" placeholder="Enter strong password" onkeyup="myFunction9()" required>
+        <input type="submit" name="submit" onclick="myFunction()">
+        </div>
+</form>
+     </div>
+</center>
+</div>
+</body>
+</html>
